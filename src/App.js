@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import Navbar from './Components/Navbar';
 import Textform from './Components/Textform'
 import Alert from './Components/Alert'
-import About from './Components/About'
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 
@@ -43,11 +40,11 @@ function App() {
   return (
     <>
   <Router>
-    <Navbar title="TextUtils" about="About Us" mode={mode} toggleMode={toggleMode} />
+    <Navbar title="TextUtils"  mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert}/>
     <div className='container'>
       <Routes>
-          <Route exact path="/about" element={<About mode={mode} />} />
+          
           <Route exact path="/" element={<Textform heading="Enter Your Text To Be Analyzed Below" mode={mode} showAlert={showAlert}/> } />
       </Routes>
     </div>
